@@ -121,7 +121,33 @@ The hyphen can be included right after the opening bracket, or right before the 
 
 ### The OR Operator
 
+You can provide as many terms as desired, as long as they are separated with the pipe character `|`. This term separates terms within each parenthesis group. So the (logical OR) matches characters or expression of either the left or right of the operator For example:
+
+`(^[A-Z]{2}[0-9]{2} [A-Z]{3}$)`<span style="color:red">|</span>`(^[A-Z][0-9]{1,3} [A-Z]{3}$)`
+
+The above code offers a regex for a Valid Current style registration plate, OR a Valid Prefix style registration plate. Therefore the sting that would be passed through that would look for a match for either one.
+
 ### Flags
+
+Flags in the world of regular expressions are used to modify the searching behaviour of given patterns.
+
+Flags are optional parameters, that can be added to an expression to make it search in a different way. Each flag is denoted by a single alphabetic character, and serves different purposes in modifying the expression's searching behaviour. For example:
+
+`i` - which stands for ignore casing, does the job of carrying out a case-insensitive search.
+
+`g` - which stands for global, serves to extend the searching to find all matches for a given expression inside a string, instead of stopping on the first match.
+
+The General way of implementing these flags is using the following syntax:
+
+```
+/pattern/flags
+```
+
+or using the example using in the 'bracket expression' above where `i` was used to allow any casing to pass through the expression:
+
+```
+`[A-Z]/i`
+```
 
 ### Character Escapes
 

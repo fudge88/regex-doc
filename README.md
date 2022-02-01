@@ -151,6 +151,40 @@ or using the example using in the 'bracket expression' above where `i` was used 
 
 ### Character Escapes
 
+When learning how to correctly escape characters in a regular expression, we can divide the escaping rules into two different lists of characters that need to be escaped:
+
+1. for characters inside a character class
+
+   There are 5 characters that need to be escaped inside a character class (anywhere inside [...]):
+
+   `[` Purpose: Start of character class.  
+   `]` Purpose: End of character class.  
+   `\` Purpose: Escaping.  
+   `-` Purpose: Character ranges.  
+   `^` Purpose: Class Negation.
+
+2. for characters outside a character class
+
+   We can use the same characters from above to be escaped outside of a character class, however they have a few differences:
+
+   `[` Purpose: Needed to define a character class.  
+   `]` Purpose: Needed to close a character class, some regular expression will allow you to not escape a ']' as long as it's outside a character class.  
+   `\` Purpose: Used to escape both inside and outside character classes but it must always be escaped when specifying a literal '\' character.  
+   `-` Purpose: Does not need to be escaped outside a character class.  
+   `^` Purpose: Used to find every digit/character that is the first on a line.
+
+   There are at least 14 characters to escape outside a character class.
+
+Escaping characters are not limited to the above.
+
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Junior Software Engineer and Full Stack Developer, looking to make the world more accessible through technology!
+
+- If you have any questions about this document
+- would like further information
+- would like to report and issue
+
+please contact me through the links below:
+
+[GitHub](https://github.com/fudge88) Profile
